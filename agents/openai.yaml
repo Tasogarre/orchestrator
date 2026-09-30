@@ -1,0 +1,5 @@
+interface:
+  display_name: "Orchestrator"
+  short_description: "Automatic task routing with quality-gated finishing"
+  brand_color: "#167D71"
+  default_prompt: "Use $orchestrator to choose direct execution or coherent lower-cost ownership with capable finishing for this task."

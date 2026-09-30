@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">Orchestrator</title>
+  <desc id="desc">Choose the right owner. Keep the quality gate. Automatic task routing across models and harnesses.</desc>
+  <rect width="1200" height="280" rx="20" fill="#102A28"/>
+  <path d="M940 76h100v64h100M940 204h100v-64" fill="none" stroke="#62D0B5" stroke-width="5"/>
+  <circle cx="940" cy="76" r="13" fill="#F0C86E"/>
+  <circle cx="940" cy="204" r="13" fill="#62D0B5"/>
+  <circle cx="1140" cy="140" r="17" fill="#F5F4EC"/>
+  <text x="56" y="97" font-family="system-ui,sans-serif" font-size="55" font-weight="700" fill="#F5F4EC">Orchestrator</text>
+  <text x="56" y="152" font-family="system-ui,sans-serif" font-size="30" fill="#CDE5DE">Choose the right owner. Keep the quality gate.</text>
+  <text x="56" y="222" font-family="system-ui,sans-serif" font-size="24" fill="#62D0B5">AUTOMATIC ROUTING · COHERENT OWNERSHIP · CAPABLE FINISHING</text>
+</svg>

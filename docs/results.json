@@ -1,0 +1,79 @@
+{
+  "schema": "orchestrator-final-insights/v1",
+  "as_of": "2026-09-30",
+  "scope": "Two selected final coherent-owner workflow diagnostics, not executions of the shipping automatic-routing skill text. Not an overall study effect or a general savings guarantee.",
+  "implementation": {
+    "treatment": "gpt-6-luna/max",
+    "direct": "gpt-6-sol/high",
+    "equal_finisher": "gpt-6-sol/high",
+    "grader": "independent objective checks plus blind gpt-6-sol/high",
+    "scenario_preparation": "gpt-6-sol/xhigh"
+  },
+  "cost_scope": "Routing, implementation/integration, repairs and equal finishing included. Shared scenario preparation and independent grading excluded from arm costs.",
+  "time_scope": "Model stages only; excludes environment preparation, independent grading and human waits.",
+  "pricing": {
+    "type": "API-equivalent estimate, not subscription billing",
+    "frozen_date": "2026-09-23",
+    "rate_table_sha256": "f534381a39605c532bac90ee2f83d69e384a2b42ea9bc6f044fc44264e30cdbc"
+  },
+  "results": [
+    {
+      "task": "Instance defaults",
+      "treatment": {
+        "pass": true,
+        "quality": 100,
+        "api_usd": 0.28281422,
+        "tokens": 1360449,
+        "wall_seconds": 523.472,
+        "severe_defects": 0
+      },
+      "direct": {
+        "pass": true,
+        "quality": 100,
+        "api_usd": 0.4334588,
+        "tokens": 878507,
+        "wall_seconds": 389.791,
+        "severe_defects": 0
+      },
+      "cost_saving_percent": 34.7540712058447,
+      "model_stage_time_increase_percent": 34.29555838898282
+    },
+    {
+      "task": "Strict offset alignment",
+      "treatment": {
+        "pass": true,
+        "quality": 100,
+        "api_usd": 0.21262264,
+        "tokens": 950352,
+        "wall_seconds": 504.692,
+        "severe_defects": 0
+      },
+      "direct": {
+        "pass": true,
+        "quality": 100,
+        "api_usd": 0.3067152,
+        "tokens": 565860,
+        "wall_seconds": 258.019,
+        "severe_defects": 0
+      },
+      "cost_saving_percent": 30.677501473679825,
+      "model_stage_time_increase_percent": 95.60264941729098
+    }
+  ],
+  "research_and_testing": {
+    "total_tokens": 345097261,
+    "input_tokens": 341131707,
+    "cached_input_tokens": 322719488,
+    "uncached_input_tokens": 18412219,
+    "output_tokens": 3965554,
+    "reasoning_output_tokens": 1991356,
+    "calls": 426,
+    "api_equivalent_usd": 127.86456832,
+    "scope": "Deduplicated complete retained research/testing/preparation/grading receipts; includes the final study. Excludes the main conversation, absent archives, incomplete receipts and unmetered engineering reviews. Auditable subtotal, not exact lifetime total. Cached input and reasoning output are subsets, not additional tokens."
+  },
+  "unmeasured": [
+    "Automatic shipping-policy performance",
+    "Claude-family solver performance",
+    "GPT-6.1 solver performance"
+  ]
+}

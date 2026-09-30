@@ -1,0 +1,9 @@
+.local/
+docs/plans/
+.compound-engineering/config.local.yaml
+__pycache__/
+*.py[cod]
+.DS_Store
+logs/
+*.jsonl
+*.session.txt
