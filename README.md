@@ -28,6 +28,22 @@ Sometimes the most efficient orchestration decision is **not to delegate**.
 There is no route mode for you to manage. Invoke the skill, describe the task,
 and state any real deadline, budget or acceptance constraints.
 
+### Start on a capable session model
+
+**The model currently running your session makes the ownership decision.**
+Start Orchestrator on a model you trust with planning, judgement and final
+acceptance—not merely the cheapest model you intend to use as a worker.
+For example, use a capable Sol-class session in Codex or an Opus-class session
+in Claude Code, at a reasoning effort appropriate to the task. These are role
+examples, not a claim that every model or effort has been benchmarked.
+
+The starting model retains the goal, decides whether to work directly or
+delegate, checks the result and owns final acceptance. If you change the main
+session model, the model active at the decision point applies the policy.
+The skill does not upgrade your session model or purchase a separate router
+call. If that model cannot handle the required judgement, use a capable owner
+before proceeding; delegating implementation does not fix a weak decision-maker.
+
 ## Final evidence
 
 The most useful retained final tactic was **GPT-6 Luna Max implementation →
@@ -83,8 +99,9 @@ remain private; only final insights and aggregate figures are published here.
 
 ## How it chooses
 
-The capable session makes the routing decision **inline**, without buying a
-separate router call or asking you to choose a mode.
+Your current capable session model makes the routing decision **inline**,
+without buying a separate router call or asking you to choose a mode. Worker
+and finisher model selections do not change the parent session model.
 
 ```text
 Task + acceptance + runtime capabilities
@@ -125,6 +142,60 @@ The finisher may **repair demonstrated defects within scope**, not merely
 approve a patch. Writers run sequentially for a coherent unit. Required checks
 run again after repairs, and the parent retains final acceptance. Numerical
 study tolerances never override your actual requirements.
+
+### Why is there a Python helper for Codex?
+
+[`scripts/run_codex_agent.py`](scripts/run_codex_agent.py) is an **optional CLI
+adapter, not the ownership decision-maker**. Use native agent tools first when
+they support the required model, effort, fresh context and workspace boundary.
+The helper provides a repeatable fallback through `codex exec` when needed.
+
+After the session model selects a route, it supplies a bounded task to the
+helper. The helper launches a fresh Codex child with the selected model,
+reasoning effort, working directory and sandbox; disables nested delegation;
+and returns the final answer, reported token usage, duration and errors as JSON.
+It also handles timeouts/cancellation and rejects detected concurrent worktree
+or output/log collisions. The sandbox does not itself enforce every owned-file
+boundary: the parent still scopes, inspects and verifies the work.
+
+It starts no background daemon, Docker container or VM, and does not change
+your main model or profile. Child calls intentionally ignore global user
+configuration, including global hooks and provider/profile preferences; use
+native tools if those must apply. It uses Codex's existing authentication, not
+a separate API client or embedded credential. Live calls consume your Codex
+allowance or API usage; `--dry-run` starts no model and the optional
+`doctor` starts live model calls. See [routing details](references/routing.md).
+
+The doctrine does not require this helper in Claude Code or OpenClaw; those
+hosts use their available, authorised native tools or supported adapters.
+
+### Do I need a sandbox or the eval environment?
+
+**You do not need our benchmark environment, Docker, Lima or a VM to use
+Orchestrator.** Invoke the skill in your normal supported coding session. There
+is no separate sandbox service to install and no benchmark to run first.
+
+Two different kinds of protection appear in the documentation:
+
+| Protection | Purpose | Needed for ordinary use? |
+| --- | --- | --- |
+| Your coding host's permissions and execution sandbox | Limit what an agent can read, write or execute while doing your real task. The optional Codex helper requests `read-only` for inspection roles and `workspace-write` for implementation roles by default. | Keep the host's appropriate protections; this is not a separate eval setup. |
+| Separate, credential-free evaluation environments | Compare workflows on fresh task copies, keep withheld checks private and grade results independently without risking your working project. | No. This is for optional controlled studies. |
+
+The helper's `--sandbox` option selects a **Codex execution policy**, not a
+Docker container or a benchmark VM. Exact enforcement depends on the host and
+platform; a sandbox is not proof that credentials are isolated or every
+assigned file boundary is enforced. The parent must still respect your
+authority, scope and verification requirements. Do not bypass protections
+merely to make delegation work; use the direct route when a safe worker route
+is unavailable.
+
+For everyday work, normal tests and acceptance checks are enough—you do not
+need to benchmark each task. If you want to measure savings on your own
+workloads, use isolated task copies, equivalent finishing and independent
+grading as described in [the evaluation methodology](references/evaluation.md).
+That is an optional study, not an installation requirement; this repository
+does not bundle the private eval harness or raw task evidence.
 
 ## Install
 
@@ -185,7 +256,8 @@ python3 scripts/run_codex_agent.py --help
 ```
 
 These checks call **no model**. The optional helper's `doctor` command starts
-paid model calls; it is not required for installation and is not run by CI.
+live model calls that consume your Codex allowance or API usage; it is not
+required for installation and is not run by CI.
 
 For a Git clone with a clean working tree, `git pull --ff-only` updates the
 skill; preserve local edits rather than forcing an update. OpenClaw Git installs

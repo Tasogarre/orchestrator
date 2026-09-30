@@ -14,6 +14,11 @@ The current capable session retains intent, planning, authority and final
 acceptance. Lower-cost models are useful when their bounded work repays the
 handoff, verification and repair cost.
 
+The model currently running the main session is the ownership decision-maker.
+Users should start on a model capable of planning, judgement and acceptance;
+this skill does not upgrade that model or launch a separate router. Worker and
+finisher model choices do not replace the main session model.
+
 ## Automatic route selection
 
 When this skill is active, **you choose the route**. Do not ask the user to pick
