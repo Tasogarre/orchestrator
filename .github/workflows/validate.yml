@@ -1,9 +1,16 @@
 name: Offline checks
 on:
   push:
+    branches: [main]
+    tags: ["**"]
   pull_request:
 permissions:
   contents: read
+concurrency:
+  # Supersede PR revisions; every trunk run keeps its own group.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   validate:
     runs-on: ubuntu-latest
